@@ -1,4 +1,6 @@
-import 'package:exam/pages/home_page.dart';
+import 'package:exam/pages/moody_page.dart';
+import 'package:exam/pages/news_page.dart';
+import 'package:exam/pages/workout_page.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -12,7 +14,13 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      home: HomePage(),
+      debugShowCheckedModeBanner: false,
+      initialRoute: News.routeName,
+      routes: {
+        MoodyPage.routeName: (context) => const MoodyPage(),
+        WorkOut.routeName: (context) => const WorkOut(),
+        News.routeName: (context) => const News(),
+      },
     );
   }
 }
